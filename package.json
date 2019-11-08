@@ -1,0 +1,30 @@
+{
+	"name": "reviews",
+	"version": "1.0.0",
+	"description": "MySQL Docker container name: 47c2111eec7328d66a93c1b94cf543ae48352380377ebda140b4c8ba75bed433",
+	"main": "index.js",
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"express": "^4.17.1",
+		"mysql": "^2.17.1",
+		"mysql2": "^2.0.0",
+		"nodemon": "^1.19.4",
+		"sequelize": "^5.21.2"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start-dev": "nodemon --inspect index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Artful-Aardvarks/reviews.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Artful-Aardvarks/reviews/issues"
+	},
+	"homepage": "https://github.com/Artful-Aardvarks/reviews#readme"
+}
