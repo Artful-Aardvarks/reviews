@@ -1,0 +1,42 @@
+{
+   "config": {
+      "target": "http://localhost:3001",
+      "phases": [
+         {
+            "duration": 7,
+            "arrivalRate": 5
+         },
+         {
+            "duration": 33,
+            "arrivalRate": 5,
+            "rampTo": 20
+         },
+         {
+            "duration": 40,
+            "arrivalRate": 100
+         }
+      ]
+   },
+   "scenarios": [
+      {
+         "name": "Request reviews",
+         "flow": [
+            {
+               "post": {
+                  "url": "/reviews/1996",
+                  "json": {
+                    "rating" : 5,
+                    "photos" : "[\"url1\", \"url2\"]",
+                    "summary": "test summary",
+                    "body" : "test body",
+                    "recommend" : true,
+                    "name" : "test name",
+                    "email" : "test email",
+                    "characteristics" : "{\"6634\": 3, \"6635\": 3, \"6636\": 3, \"6637\": 3}"
+                  }                  
+               }
+            }
+         ]
+      }
+   ]
+}

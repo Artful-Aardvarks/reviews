@@ -1,0 +1,20 @@
+config:
+  target: "http://localhost:3001"
+  phases:
+    - duration: 7
+      arrivalRate: 5
+    - duration: 33
+      arrivalRate: 5
+      rampTo: 20
+    - duration: 40
+      arrivalRate: 100
+  payload:
+    path: "../clean_data/products.csv"
+    fields:
+      - "id"
+    skipHeader: true
+scenarios:
+  - name: "Request reviews"
+    flow:
+      - get:
+          url: "/reviews/{{ id }}/meta"
