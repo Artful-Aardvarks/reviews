@@ -11,7 +11,6 @@ module.exports = async function(req, res) {
 	debugger;
 	const order =
 		sort === "newest" ? [["created_date", "DESC"]] : [["helpfulness", "DESC"]];
-	console.log("order:", order);
 	const findAllResults = await Reviews.findAndCountAll({
 		where: { product_id: product_id },
 		offset: (page - 1) * count,

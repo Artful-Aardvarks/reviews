@@ -4,7 +4,8 @@ const { DB_NAME, DB_USERNAME, DB_PASSWORD, DB_HOST } = require("../config");
 
 const sequelize = new Sequelize(DB_NAME, DB_USERNAME, DB_PASSWORD, {
 	host: DB_HOST,
-	dialect: "mysql"
+	dialect: "mysql",
+	logging: false
 });
 
 const models = createSchema(sequelize, /*createTables = */ false);
