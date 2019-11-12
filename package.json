@@ -4,17 +4,27 @@
 	"description": "MySQL Docker container name: 47c2111eec7328d66a93c1b94cf543ae48352380377ebda140b4c8ba75bed433",
 	"main": "index.js",
 	"dependencies": {
+		"bluebird": "^3.7.1",
 		"body-parser": "^1.19.0",
 		"express": "^4.17.1",
+		"iconv-lite": "^0.5.0",
 		"mysql": "^2.17.1",
 		"mysql2": "^2.0.0",
 		"nodemon": "^1.19.4",
-		"sequelize": "^5.21.2"
+		"sequelize": "^5.21.2",
+		"tedious": "^6.6.2"
 	},
-	"devDependencies": {},
+	"devDependencies": {
+		"artillery": "^1.6.0-29",
+		"frisby": "^2.1.2",
+		"jest": "^24.9.0",
+		"supertest": "^4.0.2"
+	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start-dev": "nodemon --inspect index.js"
+		"start-dev": "nodemon --inspect server/index.js",
+		"seed-database": "mysql -u root -p sdc_reviews < db/loadIntoDB.sql",
+		"write-csvs": "node db/etl/index.js",
+		"test": "jest"
 	},
 	"repository": {
 		"type": "git",
@@ -26,5 +36,14 @@
 	"bugs": {
 		"url": "https://github.com/Artful-Aardvarks/reviews/issues"
 	},
-	"homepage": "https://github.com/Artful-Aardvarks/reviews#readme"
+	"homepage": "https://github.com/Artful-Aardvarks/reviews#readme",
+	"jest": {
+		"testEnvironment": "node",
+		"coveragePathIgnorePatterns": [
+			"/node_modules/",
+			"/raw_data/",
+			"/clean_data/",
+			"/server/error_logs/"
+		]
+	}
 }
