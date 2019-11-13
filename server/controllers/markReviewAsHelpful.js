@@ -3,6 +3,9 @@ const { logError } = require("./helpers");
 
 module.exports = async function(req, res) {
 	const review_id = req.params.review_id;
+	if (typeof parseInt(review_id) !== 'number') {
+		res.status(400).end()
+	}
 	try {
 		await Reviews.increment("helpfulness", {
 			where: {
