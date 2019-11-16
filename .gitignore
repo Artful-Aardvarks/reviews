@@ -4,3 +4,4 @@
 /clean_data
 /server/error_logs
 /coverage
+/server/config.js

@@ -4,6 +4,7 @@ const Promise = require("bluebird");
 const { logError } = require("./helpers.js");
 
 module.exports = async function(req, res) {
+  debugger;
   const product_id = getProductId(req);
 
   if (!parseInt(product_id)) {

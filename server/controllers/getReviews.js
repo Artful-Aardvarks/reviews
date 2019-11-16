@@ -4,16 +4,12 @@ const { logError } = require("./helpers.js");
 
 module.exports = async function(req, res) {
   const { product_id, page, count, sort } = getQueryVariables(req);
-
   if (!product_id) {
     res.status(400).end();
     return;
   }
-
   const reviews = await getAllReviews(product_id, page, count, sort);
-
   const images = await getAllImages(reviews.rows);
-
   if (
     reviews === undefined ||
     reviews === null ||
@@ -23,21 +19,17 @@ module.exports = async function(req, res) {
     res.status(500).end();
     return;
   }
-
   const reviewsAndImages = [];
-
   for (let i = 0; i < reviews.rows.length; i++) {
     reviewsAndImages.push(reviews.rows[i].toJSON());
     reviewsAndImages[i].photos = images[i];
   }
-
   const responseObject = {
     product: product_id,
     page: page,
     count: count,
     results: reviewsAndImages
   };
-
   res.status(200).send(responseObject);
 };
 
@@ -56,7 +48,6 @@ function getQueryVariables(req) {
     req.query.sort === "newest"
       ? [["created_date", "DESC"]]
       : [["helpfulness", "DESC"]];
-  debugger;
   return {
     product_id,
     page,

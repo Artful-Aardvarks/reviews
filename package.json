@@ -22,6 +22,7 @@
 	},
 	"scripts": {
 		"start-dev": "nodemon --inspect server/index.js",
+		"start": "node server/index.js",
 		"seed-database": "mysql -u root -p sdc_reviews < db/loadIntoDB.sql",
 		"write-csvs": "node db/etl/index.js",
 		"test": "jest --coverage"

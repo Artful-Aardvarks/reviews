@@ -1,0 +1,4 @@
+node_modules
+npm-debug.log
+raw_data
+ec2_db_data
