@@ -1,8 +1,22 @@
-FROM node:6.11.5    
+FROM node:10
 
-WORKDIR /Users/harryshapiro/hrnyc/reviews
-COPY package.json .
+ARG DB_USERNAME=root
+ENV DB_USERNAME=${DB_USERNAME}
+
+ARG DB_PASSWORD=Grover96!
+ENV DB_PASSWORD=${DB_PASSWORD}
+
+ARG DB_NAME=reviews
+ENV DB_NAME=${DB_NAME}
+
+ARG DB_HOST=ec2-18-222-224-168.us-east-2.compute.amazonaws.com
+ENV DB_HOST=${DB_HOST}
+
+WORKDIR /usr/src/app
+COPY package*.json ./
 RUN npm install    
 COPY . .
 
-CMD [ "npm", "start" ]    
+EXPOSE 3001
+
+CMD [ "npm", "start" ]   

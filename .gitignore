@@ -5,3 +5,5 @@
 /server/error_logs
 /coverage
 /server/config.js
+/public
+/ec2_db_data

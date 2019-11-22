@@ -1,5 +1,0 @@
-scp -i ~/hrnyc/MySQL.pem ~/hrnyc/reviews/clean_data/reviews.csv ubuntu@ec2-3-16-138-148.us-east-2.compute.amazonaws.com:~/
-scp -i ~/hrnyc/MySQL.pem ~/hrnyc/reviews/clean_data/products.csv ubuntu@ec2-3-16-138-148.us-east-2.compute.amazonaws.com:~/
-scp -i ~/hrnyc/MySQL.pem ~/hrnyc/reviews/clean_data/reviews_photos.csv ubuntu@ec2-3-16-138-148.us-east-2.compute.amazonaws.com:~/
-scp -i ~/hrnyc/MySQL.pem ~/hrnyc/reviews/clean_data/characteristics.csv ubuntu@ec2-3-16-138-148.us-east-2.compute.amazonaws.com:~/
-scp -i ~/hrnyc/MySQL.pem ~/hrnyc/reviews/clean_data/characteristic_reviews.csv ubuntu@ec2-3-16-138-148.us-east-2.compute.amazonaws.com:~/
