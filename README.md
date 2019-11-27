@@ -28,6 +28,6 @@ I then went for the low hanging fruit - optimizing my web server's code. The mos
 My next optimization was horizontal scaling. I containerized all my services with Docker, increased by machine count by 500%, and networked these machines via an NGINX least-connected load balancer.
 
 ## Iterative schema design for performance/integrity nirvana
-Finally, I was ready to denormalize my data. I started with the tables that seemed 1) had the strongest one-to-one connection with a parent table and 2) was the least likely to benefit from being able to be accessed independently. I went one-by-one until I hit a throughput level that I was satisified with (truthfully, this was a pretty subjective call).
+Finally, I was ready to denormalize my data. I started with the tables that 1) had the strongest one-to-one connection with a parent table and 2) were the least likely to benefit from being able to be accessed independently. I went one-by-one until I hit a throughput level that I was satisified with (truthfully, this was a subjective call).
 
 In the end, I had a 400% increase in throughput while maintaining a constant latency, all the while minimizing data denormalization.
