@@ -1,8 +1,8 @@
 # Reviews
 
-This is a ratings & reviews service for an e-commerce site. It supports retrieving reviews, posting a review, marking a review as helpful, and reporting a review. The business objective was to increase throughput as much as possible while staying under a threshold latency. A personal goal of mine was to minimize data denormalization. I eventually hit all these goals, increasing throughput 400% without execeeding the acceptable latency.
+This is a ratings & reviews service for an e-commerce site. It supports retrieving reviews, posting a review, marking a review as helpful, and reporting a review. The business objective was to **increase throughput as much as possible while staying under a threshold latency**. A personal goal of mine was to **minimize data denormalization**. I eventually hit all these goals, increasing throughput 400% without execeeding the acceptable latency.
 
-You're going to see the word "iterative" many times in this readme, and that's because it was my exact goal. I'm a believer in fast-moving, performance-test-driven development - tweak, test, and tweak again. To enable this evidence-based optimization, I needed to build a flexible architecture that could gracefully handle changes as fundamental as schema redesign.
+You're going to see the word "iterative" many times in this readme, and that's because it was my exact goal. I'm a believer in fast-moving, performance-test-driven development - **tweak, test, and tweak again**. To enable this evidence-based optimization, I needed to build a **flexible architecture that could gracefully handle changes** as fundamental as schema redesign.
 
 I had four main goals for my system:
 
@@ -30,4 +30,4 @@ My next optimization was horizontal scaling. I containerized all my services wit
 ## Iterative schema design for performance/integrity nirvana
 Finally, I was ready to denormalize my data. I started with the tables that 1) had the strongest one-to-one connection with a parent table and 2) were the least likely to benefit from being able to be accessed independently. I went one-by-one until I hit a throughput level that I was satisified with (truthfully, this was a subjective call).
 
-In the end, I had a 400% increase in throughput while maintaining a constant latency, all the while minimizing data denormalization.
+In the end, I had a **400% increase in throughput while maintaining a constant latency**, all the while minimizing data denormalization.
